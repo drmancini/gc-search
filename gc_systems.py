@@ -1,5 +1,5 @@
 """
-Scans the Updated nearby galaxy catalog by Karachentsev et al. (2013) for galaxies within UKIDSS LAS coverage areas.
+Scans the Catalog of globular cluster systems (Harris+, 2013) for galaxies with GCs within UKIDSS LAS coverage areas.
 """
 
 from astropy.coordinates import SkyCoord
@@ -11,7 +11,7 @@ from utils.coordinates import test_ukidss_footprint
 from config.constants import LAS_COVERAGE
 import json
 
-output_file = '../data/raw/galaxies.json'
+output_file = '../data/raw/gc_systems.json'
 
 distance_from = 0 # Mpc
 distance_to = 13 # Mpc

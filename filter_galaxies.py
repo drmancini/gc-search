@@ -1,9 +1,7 @@
 """
 Scans the Updated nearby galaxy catalog by Karachentsev et al. (2013) for galaxies within UKIDSS LAS coverage areas.
 """
-
-from astropy.coordinates import SkyCoord
-import astropy.units as u
+from utils.coordinates import coordinate_str2deg
 from astroquery.vizier import Vizier
 Vizier.ROW_LIMIT = -1
 
@@ -18,7 +16,6 @@ diameter_from = 5 # kpc
 
 # Query Vizier for data
 galaxy_catalogs = Vizier.get_catalogs('J/AJ/145/101')
-gc_galaxies = Vizier.get_catalogs('J/ApJ/772/82')
 # legus_galaxies = Vizier.get_catalogs('J/ApJS/235/23/table4')
 
 galaxy_data = galaxy_catalogs[0].to_pandas().to_dict(orient='records')
@@ -28,11 +25,9 @@ print(f"Found {len(galaxy_data)} galaxies in catalog")
 
 # Convert RA and DEC from string to degrees
 for entry in galaxy_data:
-  ra_str = entry['RAJ2000']
-  dec_str = entry['DEJ2000']
-  coord = SkyCoord(ra=ra_str, dec=dec_str, unit=(u.hourangle, u.deg))
-  entry['RAJ2000'] = coord.ra.deg
-  entry['DEJ2000'] = coord.dec.deg
+  coord = coordinate_str2deg(entry['RAJ2000'], entry['DEJ2000'])
+  entry['RAJ2000'] = coord[0]
+  entry['DEJ2000'] = coord[1]
 
 # Flag the results to only include galaxies within the UKIDSS LAS coverage areas
 data_in_survey = []
