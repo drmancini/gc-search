@@ -21,7 +21,7 @@ elliptical galaxy
 10.2 Mpc away, L1, 1.8 kpc
 
 ### NGC 3384
-elliptical galaxy
+SB0 galaxy
 10.8 Mpc away, L1, 1.4 kpc
 
 ### NGC 3489
@@ -34,11 +34,11 @@ spiral galaxy
 Although 270 GC candidates had been identified, authors have published a catalog of only 50 of the brightest clusters. This is the faintest one <https://skyserver.sdss.org/dr18/VisualTools/quickobj?objId=1237651753476948716> and has decent S/N. I might look for the whole database.
 
 ### UGC-7369
-possibly spiral galaxy
+dwarf spheroidal galaxy
 11.6 Mpc away, L4, 0.8 kpc
 
 ### UGC-8638
-possibly irregular galaxy
+irregular galaxy
 has only 3 GCs so interesting only if adding the galaxy type helps in some way (need to test)
 4.3 Mpc away, L4, 0.56 kpc
 
