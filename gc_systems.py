@@ -64,8 +64,3 @@ with open(output_file, 'w') as f:
   json.dump(data_with_radius, f, indent=4)
 
 print(f"Data written to {output_file}")
-
-# NGC3384 - 
-# NGC3384 - 
-# NGC3384 - 
-# NGC4517 - VI photometry of globular cluster systems (Goudfrooij+, 2003) https://arxiv.org/abs/astro-ph/0304195
