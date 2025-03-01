@@ -28,7 +28,9 @@ print(f"Found {len(galaxy_data)} galaxies in catalog")
 # Flag the results to only include galaxies within the UKIDSS LAS coverage areas
 data_in_survey = []
 for entry in galaxy_data:
-  if test_ukidss_footprint(entry['RAJ2000'], entry['DEJ2000']):
+  ukidss_test = test_ukidss_footprint(entry['RAJ2000'], entry['DEJ2000'])
+  if ukidss_test[0]:
+    entry['UKIDSS_area'] = ukidss_test[1]
     data_in_survey.append(entry)
 
 print(f"... {len(data_in_survey)} galaxies fit inside UKIDSS LAS coverage areas")
